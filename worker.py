@@ -4,6 +4,11 @@ from ibm_watson_machine_learning.foundation_models import Model
 from ibm_watson_machine_learning.metanames import GenTextParamsMetaNames as GenParams
 from ibm_watson_machine_learning.foundation_models.utils.enums import DecodingMethods
 import requests
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 # placeholder for Watsonx_API and Project_id incase you need to use the code outside this environment
 # API_KEY = "Your WatsonX API"
 PROJECT_ID= "skills-network"
@@ -56,7 +61,7 @@ def speech_to_text(audio_binary):
 
 def text_to_speech(text, voice=""):
     # Set up Watson Speech-to-Text HTTP Api url
-    base_url = 'https://sn-watson-stt.labs.skills.network'
+    base_url = 'https://sn-watson-tts.labs.skills.network'
     api_url = base_url+'/text-to-speech/api/v1/synthesize?output=output_text.wav'
     # Adding voice parameter in api_url if the user has selected a preferred voice
     if voice != "" and voice != "default":
