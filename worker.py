@@ -3,7 +3,7 @@ from ibm_watson_machine_learning.foundation_models.utils.enums import ModelTypes
 from ibm_watson_machine_learning.foundation_models import Model
 from ibm_watson_machine_learning.metanames import GenTextParamsMetaNames as GenParams
 from ibm_watson_machine_learning.foundation_models.utils.enums import DecodingMethods
-
+import requests
 # placeholder for Watsonx_API and Project_id incase you need to use the code outside this environment
 # API_KEY = "Your WatsonX API"
 PROJECT_ID= "skills-network"
